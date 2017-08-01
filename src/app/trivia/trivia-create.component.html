@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="margin-20">
+        <h2 class="page-header">Add question</h2>
+      </div>
+
+      <form [formGroup]="myForm" novalidate (ngSubmit)="submit(myForm)">
+        <div class="form-group">
+          <label>Question</label>
+          <input type="text" class="form-control" formControlName="qtitle" required>
+        </div>
+        <label>Answer</label>
+        <input type="text" class="form-control" formControlName="atitle" required>
+
+        <label class="checkbox" style="margin-left:20px">
+          <input type="checkbox" formControlName="acb">
+        </label>
+
+        <br>
+
+        <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
+
+        <div class="clearfix"></div>
+        <br>
+
+        <div>
+          <div>myForm details:-</div>
+          <pre>form value: <br>{{myForm.value | json}}</pre>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
